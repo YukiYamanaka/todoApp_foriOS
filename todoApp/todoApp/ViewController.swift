@@ -5,22 +5,26 @@
 //  Created by Yuki on 2016/06/17.
 //  Copyright © 2016年 yuki yamanaka. All rights reserved.
 //
-
+//通知先
 import UIKit
 import Alamofire
-
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+//1.プロトコルに準拠
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TaskCellDelegate {
     @IBOutlet var table :UITableView! //TableView
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
-    
+    var taskCell: TaskCell!
     var taskArray = NSArray() //JSONで取得したtask一覧を格納する変数
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //TableViewの参照先
         table.dataSource = self
         table.delegate = self
+        
+        //2.デリゲートインスタンスに自身をセット
+        self.taskCell = TaskCell()
+        self.taskCell.delegate = self
         
         self.loadTasks()
             }
@@ -46,8 +50,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("tapped cell:\(indexPath.row)")
         print(taskArray[indexPath.row])
     }
+    //3.デリゲートメソッドの処理を実装
     //tableViewの表示更新,task一覧のGETリクエスト
-    func loadTasks(){
+    func loadTasks() -> Void {
         let requestUrl = "http://wdp4.com/tasks.json"
         //HTTPリクエスト
         Alamofire.request(.GET, requestUrl).responseJSON { response in
@@ -85,6 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+  
     //セルのstatusボタンがタップされた時
     @IBAction func statusTapped(){
         //todo,doing,doneの選択肢を表示

@@ -65,9 +65,6 @@
                                                     <state key="normal" title="delete">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="deleteTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="80L-tt-Q4F"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYk-af-BhG">
                                                     <rect key="frame" x="8" y="8" width="259" height="30"/>
@@ -107,7 +104,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="content" destination="AYk-af-BhG" id="ODw-ik-wQW"/>
-                                            <outlet property="deleteBtn" destination="zI2-IW-6zG" id="Lj2-9B-Sf8"/>
                                             <outlet property="status" destination="KU2-R0-uGk" id="Dxg-Qs-eBa"/>
                                         </connections>
                                     </tableViewCell>
