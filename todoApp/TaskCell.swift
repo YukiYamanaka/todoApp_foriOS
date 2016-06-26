@@ -7,14 +7,16 @@
 //  Created by Yuki on 2016/06/17.
 //  Copyright © 2016年 yuki yamanaka. All rights reserved.
 //
-//通知元
+//通知先
 import UIKit
 import Alamofire
+
 //1.プロトコルを定義
-@objc protocol TaskCellDelegate {
+@objc protocol TaskDelegate {
     func loadTasks() -> Void
 }
 
+//1.プロトコルに準拠
 class TaskCell :UITableViewCell {
 
     @IBOutlet weak var content: UILabel!
@@ -22,28 +24,23 @@ class TaskCell :UITableViewCell {
     var id: Int!
     var url :String!
     //@IBOutlet weak var deleteBtn: UIButton!
-    //3.デリゲートインスタンスを定義
-    var delegate: TaskCellDelegate?
+    var delegate :TaskDelegate?
     
     func setCell(content :String, status :String, id: Int,url: String){
         self.content.text = content
         self.status.setTitle(status, forState: .Normal)
         self.id = id
         self.url = url
-    }
+        //2.委託元viewControllerクラスのデリゲートを委託先(self)にセット
+           }
     //セルのdeleteボタンが押された時
   func deleteTask(){
         //HTTP DELETE
         Alamofire.request(.DELETE, self.url)
             .responseString { JSON in
                 print(JSON)
-        //4.デリゲートメソッドの呼び出しを実装
-        self.callLoadTasks()
-     }
+        }
+    self.delegate?.loadTasks()
     }
-    //2.デリゲートメソッドを定義
-    func callLoadTasks(){
-        //これでloadtasks呼べていない
-        self.delegate?.loadTasks()
-    }
+
    }

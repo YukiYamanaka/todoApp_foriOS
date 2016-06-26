@@ -5,26 +5,23 @@
 //  Created by Yuki on 2016/06/17.
 //  Copyright © 2016年 yuki yamanaka. All rights reserved.
 //
-//通知先
+//通知元
 import UIKit
 import Alamofire
-//1.プロトコルに準拠
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TaskCellDelegate {
+
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TaskDelegate {
     @IBOutlet var table :UITableView! //TableView
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
-    var taskCell: TaskCell!
     var taskArray = NSArray() //JSONで取得したtask一覧を格納する変数
-
+    //2.デリゲートインスタンスを定義
+    var cellArray = [TaskCell]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TableViewの参照先
         table.dataSource = self
         table.delegate = self
-        
-        //2.デリゲートインスタンスに自身をセット
-        self.taskCell = TaskCell()
-        self.taskCell.delegate = self
         
         self.loadTasks()
             }
@@ -40,8 +37,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let status = taskDic["status"] as? String
         let id = taskDic["id"] as? Int
         let url = taskDic["url"] as? String
+       
         let cell :TaskCell  = tableView.dequeueReusableCellWithIdentifier("TaskCell")! as! TaskCell
         cell.setCell(content!, status: status!, id: id!, url: url!)
+        //ココ！！
+        cell.delegate = self
+        cellArray.append(cell) //ポインタ保持ならインスタンス消滅
         return cell
     }
     //セルがタップされた時の処理
@@ -90,7 +91,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-  
+    //3.デリゲートメソッドを定義
+    //セルのdeleteボタンがタップされた時
+   @IBAction func deleteTapped(){
+    //タップされたcellのタスク特定方法が?
+       cellArray..deleteTask()
+    }
     //セルのstatusボタンがタップされた時
     @IBAction func statusTapped(){
         //todo,doing,doneの選択肢を表示

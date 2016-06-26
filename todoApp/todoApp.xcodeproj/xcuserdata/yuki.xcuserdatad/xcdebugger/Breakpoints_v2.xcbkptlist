@@ -28,13 +28,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskCell.swift"
-            timestampString = "488124214.022162"
+            timestampString = "488360458.351017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "callLoadTasks()"
-            landmarkType = "5">
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "TaskCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -43,13 +43,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TaskCell.swift"
-            timestampString = "488124220.256011"
+            filePath = "todoApp/ViewController.swift"
+            timestampString = "488360634.284029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "deleteTask()"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "statusTapped()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -60,92 +60,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "todoApp/ViewController.swift"
-            timestampString = "488124236.828474"
+            timestampString = "488360636.236912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "loadTasks()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "statusTapped()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskCell.swift"
-            timestampString = "488124825.435493"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "deleteTask()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "todoApp/ViewController.swift"
-            timestampString = "488124949.291391"
+            timestampString = "488617210.059438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "loadTasks()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todoApp.ViewController.loadTasks () -&gt; ()"
-                  moduleName = "todoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saki/swift_project/todoApp_foriOS/todoApp/todoApp/ViewController.swift"
-                  timestampString = "488173651.847795"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "61">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "todoApp.ViewController.(loadTasks () -&gt; ()).(closure #1)"
-                  moduleName = "todoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saki/swift_project/todoApp_foriOS/todoApp/todoApp/ViewController.swift"
-                  timestampString = "488173651.848114"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "66">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskCell.swift"
-            timestampString = "488173620.286726"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "callLoadTasks()"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "deleteTapped()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
